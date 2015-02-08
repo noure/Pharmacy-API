@@ -12,7 +12,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
+/**
+ * 
+ * @author noureddine
+ *
+ */
 
 @Configuration
 public class AppConfiguration {

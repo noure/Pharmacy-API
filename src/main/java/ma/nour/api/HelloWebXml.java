@@ -2,7 +2,11 @@ package ma.nour.api;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-
+/**
+ * 
+ * @author noureddine
+ *
+ */
 public class HelloWebXml extends SpringBootServletInitializer {
 
 	@Override

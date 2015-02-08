@@ -16,7 +16,11 @@ import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
+/**
+ * this class contient the configuration to pretty print the Json Objects
+ * @author noureddine
+ *
+ */
 @Configuration
 public class AppWeb{ // extends WebMvcAutoConfiguration
 	
