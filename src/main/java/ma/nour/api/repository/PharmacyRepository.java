@@ -1,5 +1,7 @@
 package ma.nour.api.repository;
 
+import java.util.List;
+
 import ma.nour.api.entity.Pharmacy;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,5 +14,7 @@ public interface PharmacyRepository extends JpaRepository<Pharmacy, Integer> {
 	 * @return Pharmacy 
 	 */
 	Pharmacy findByName(String name);
+
+	List<Pharmacy> findByGardeTrue();
 
 }

@@ -24,4 +24,6 @@ public class Pharmacy {
 	private String adress;
 	
 	private String tele;
+	
+	private boolean garde;
 }
