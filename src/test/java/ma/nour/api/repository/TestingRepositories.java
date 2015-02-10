@@ -10,7 +10,6 @@ import java.util.List;
 import ma.nour.api.Application;
 import ma.nour.api.entity.Pharmacy;
 import ma.nour.api.repository.PharmacyRepository;
-import ma.nour.api.repository.UserRepository;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,9 +28,7 @@ public class TestingRepositories {
 	
 	PharmacyRepository pharmacyRepository;
 
-	// injecting the UserRepository we could use CDI or XML configuration
-	@Autowired
-	UserRepository userRepository;
+	
 
 	/***
 	 * This methode test that the injection is done 
@@ -53,8 +50,7 @@ public class TestingRepositories {
 		List<Pharmacy> phars = pharmacyRepository.findAll();
 
 		Assert.assertNotNull("pharmacies list should not be null", phars);
-		Assert.assertTrue("Users list should not be empty", userRepository
-				.findAll().size() > 0);
+		
 		Assert.assertTrue("pharms list should not be empty", pharmacyRepository
 				.findAll().size() > 0);
 

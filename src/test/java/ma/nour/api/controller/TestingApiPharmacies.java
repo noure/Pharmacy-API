@@ -3,6 +3,8 @@ package ma.nour.api.controller;
 import java.nio.charset.Charset;
 
 import ma.nour.api.Application;
+import ma.nour.api.entity.Pharmacy;
+import ma.nour.api.service.PharmacyService;
 
 import org.junit.After;
 import org.junit.Before;
@@ -38,9 +40,18 @@ public class TestingApiPharmacies {
 	private WebApplicationContext context;
 	private MockMvc mockMvc;
 
+	@Autowired
+	PharmacyService pharmacyService;
+
 	@Before
 	public void setUp() {
 		this.mockMvc = webAppContextSetup(this.context).build();
+		Pharmacy phar = new Pharmacy();
+		phar.setAdress("testing adress");
+		phar.setName("Ensa Pharmacy ");
+		phar.setTele("tele bidon");
+		phar.setGarde(true);
+		pharmacyService.save(phar);
 	}
 
 	/**

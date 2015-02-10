@@ -24,21 +24,32 @@ public class PharmacyController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping
 	public List<Pharmacy> findAll() {
 		return pharmacyService.findAll();
 	}
 
 	/**
-	 * return specific pharmacy to the EndPOint
+	 * return specific pharmacy to the EndPOint by Get request
 	 * 
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Pharmacy findOne(@PathVariable int id) {
+	@RequestMapping(value = "/{id}")
+	public Pharmacy findOne(@PathVariable("id") int id) {
 		return pharmacyService.findOne(id);
 	}
+
+	/**
+	 * post request
+	 * 
+	 * @param name
+	 * @return
+	 */
+//	@RequestMapping(value = "/{name}", method = RequestMethod.POST)
+//	public Pharmacy findByName(@PathVariable("name") String name) {
+//		return pharmacyService.findByName(name);
+//	}
 
 	/**
 	 * create pharmacy from the endpoint=crawler in this case
@@ -47,11 +58,16 @@ public class PharmacyController {
 	 * @return
 	 */
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public Pharmacy createOne(@RequestBody Pharmacy pharmacy) {
 		pharmacyService.save(pharmacy);
 
+		System.out.println("**********************************");
+		System.out.println("nom : " + pharmacy.getName());
+		System.out.println("adress : " + pharmacy.getAdress());
+		System.out.println("tele : " + pharmacy.getTele());
+
 		return pharmacy;
 	}
-
+		
 }
